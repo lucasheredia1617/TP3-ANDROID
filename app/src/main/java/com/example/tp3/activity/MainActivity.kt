@@ -1,12 +1,14 @@
 package com.example.tp3.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.tp3.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.tp3.mvp.presenter.MainPresenter
+import com.example.tp3.mvp.view.MainView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        MainPresenter(MainView(this))
     }
 }
